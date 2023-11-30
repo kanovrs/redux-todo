@@ -1,0 +1,73 @@
+.todo-item {
+  display: flex;
+  background-color: #201f1f;
+  border-radius: 8px;
+  padding: 20px 15px;
+  margin-top: 5px;
+}
+
+.todo-item-btn {
+  display: flex;
+  background-color: rgba(1, 1, 1, 0);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  background-image: url(./../../assets/img/remove.svg);
+  height: 24px;
+  width: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.todo-item-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.todo-item-text {
+  display: flex;
+  position: relative;
+}
+
+.todo-item-text::before {
+  border: 3px solid white;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  content: "";
+  margin-right: 5px;
+}
+
+.todo-item-text::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 6px;
+  width: 6px;
+  height: 10px;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
+  transform: rotate(45deg);
+  display: none;
+}
+
+.todo-item-checkbox:checked + .todo-item-text::after {
+  display: block;
+  border-right: 3px solid #7a7777;
+  border-bottom: 3px solid #7a7777;
+}
+
+.todo-item-checkbox:checked + .todo-item-text::before {
+  border: 3px solid #7a7777;
+}
+
+.todo-item-checkbox:checked + .todo-item-text {
+  color: #7a7777;
+}
